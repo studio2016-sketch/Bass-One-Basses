@@ -27,7 +27,18 @@ export default function Home() {
     setSent(true);
   }
 
-  return <main>
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    name: "Bass One Basses",
+    description: "Ergonomically enhanced, tonally dynamic electric basses handcrafted by Dr. Duane Greene.",
+    url: "https://bass-one-basses.vercel.app",
+    email: "bassoneinfo@gmail.com",
+    address: { "@type": "PostalAddress", addressLocality: "Austin", addressRegion: "TX", addressCountry: "US" },
+    sameAs: [],
+  };
+
+  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} /><main>
     <nav className="nav"><a className="brand" href="#top">BASS <i>ONE</i></a><div className="navlinks"><a href="#collection">Collection</a><a href="#difference">The Difference</a><a href="#heritage">Heritage</a><a href="#custom">Custom</a></div><a className="navcta" href="#consult">Begin your build</a></nav>
     <section className="hero" id="top">
       <div className="hero-glow" />
@@ -54,5 +65,5 @@ export default function Home() {
 
     <section className="consult section" id="consult"><div><p className="eyebrow">Speak with Bass One</p><h2>Let&apos;s find the bass<br/><em>that belongs in your hands.</em></h2><p>Tell us where you are in your journey. Whether you are ready to order a standard model or begin a fully custom instrument, the conversation starts here.</p><p className="sales">Sales & custom builds<br/><a href="mailto:bassoneinfo@gmail.com">bassoneinfo@gmail.com</a><br/>Austin, Texas</p></div><form onSubmit={submit}><label>Your name<input required name="name" placeholder="Your name" /></label><label>Email address<input required type="email" name="email" placeholder="you@email.com" /></label><label>I&apos;m interested in<select name="interest" defaultValue="Custom consultation"><option>Awesome One</option><option>Incredible One</option><option>Custom consultation</option><option>Artist / dealer partnership</option></select></label><label>Tell us about your music and ideal bass<textarea name="message" rows={4} placeholder="Your sound, string count, timeline, questions…" /></label><button className="button solid" type="submit">Send inquiry</button>{sent && <p className="form-note">Your email app is opening with your inquiry ready to send.</p>}</form></section>
     <footer><a className="brand" href="#top">BASS <i>ONE</i></a><p>Handcrafted instruments for a life in music.</p><p>© {new Date().getFullYear()} Bass One Basses</p></footer>
-  </main>;
+  </main></>;
 }
