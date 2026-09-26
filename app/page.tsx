@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 
 const models = [
   { name: "Awesome One", series: "Professional Series", from: "$1,998", image: "https://static.wixstatic.com/media/3e9782_dda855938083440da828ab81e6f3e85f~mv2.jpeg", copy: "The essential Bass One experience: bold finish, active/passive versatility, and the comfort to play longer." },
@@ -16,6 +16,7 @@ function salesEmail(subject: string) {
 export default function Home() {
   const [sent, setSent] = useState(false);
   const [selectedModel, setSelectedModel] = useState("Custom consultation");
+  useEffect(() => { const model = new URLSearchParams(window.location.search).get("model"); if (model && ["Awesome One","Incredible One","Magnificent One","Custom consultation"].includes(model)) setSelectedModel(model); }, []);
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -40,17 +41,17 @@ export default function Home() {
   };
 
   return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} /><main>
-    <nav className="nav"><a className="brand" href="#top"><img className="brand-emblem" src="/bass-one-emblem.svg" alt="Bass One official gold emblem" /><span>BASS <i>ONE</i></span></a><div className="navlinks"><a href="#collection">Collection</a><a href="#difference">The Difference</a><a href="#heritage">Heritage</a><a href="#custom">Custom</a></div><a className="navcta" href="#consult">Begin your build</a></nav>
+    <nav className="nav"><a className="brand" href="#top"><img className="brand-emblem" src="/bass-one-emblem.svg" alt="Bass One official gold emblem" /><span>BASS <i>ONE</i></span></a><div className="navlinks"><a href="/collection">Collection</a><a href="/listening-room">Listen</a><a href="#difference">The Difference</a><a href="#heritage">Heritage</a><a href="#custom">Custom</a></div><a className="navcta" href="#consult">Begin your build</a></nav>
     <section className="hero" id="top">
       <div className="hero-glow" />
-      <div className="hero-copy"><p className="eyebrow">Ergonomically enhanced · Tonally dynamic</p><h1>Built to play<br/><em>with you.</em></h1><p className="lede">Instruments of uncommon balance, sensitivity, and beauty—created so the bass never stands between the musician and the music.</p><div className="actions"><a className="button solid" href="#collection">Explore the collection</a><a className="textlink" href="#difference">Why Bass One <span>→</span></a></div></div>
+      <div className="hero-copy"><p className="eyebrow">Ergonomically enhanced · Tonally dynamic</p><h1>Built to play<br/><em>with you.</em></h1><p className="lede">Instruments of uncommon balance, sensitivity, and beauty—created so the bass never stands between the musician and the music.</p><div className="actions"><a className="button solid" href="/collection">Explore the collection</a><a className="textlink" href="#difference">Why Bass One <span>→</span></a></div></div>
       <div className="hero-image"><Image src="https://static.wixstatic.com/media/3e9782_91fb8dcd74cc4b9bb44b4ff7a9d04ebd~mv2.png" alt="Bass One custom bass" fill priority sizes="(max-width: 800px) 100vw, 52vw" /></div>
       <p className="hero-note">Austin, Texas<br/>Handcrafted with purpose</p>
     </section>
 
     <section className="statement"><p>“Your instrument should be the means by which you express yourself, not the barrier between your ideas and what the audience hears.”</p></section>
 
-    <section className="section collection" id="collection"><div className="section-intro"><h2>Three expressions.<br/><em>One uncompromising standard.</em></h2><p>Every Bass One begins with a player&apos;s body and voice in mind. Choose the path that meets you where you are.</p></div><div className="model-grid">{models.map((model) => <article className="model" key={model.name}><div className="model-image"><Image src={model.image} alt={model.name} fill sizes="(max-width: 800px) 100vw, 33vw" /></div><p className="tier">{model.series}</p><h3>{model.name}</h3><p>{model.copy}</p><div className="model-bottom"><span>From {model.from}</span><a href="#consult" onClick={() => setSelectedModel(model.name)}>Inquire <b>→</b></a></div></article>)}</div></section>
+    <section className="section collection" id="collection"><div className="section-intro"><h2>Three expressions.<br/><em>One uncompromising standard.</em></h2><p>Every Bass One begins with a player&apos;s body and voice in mind. Choose the path that meets you where you are.</p></div><div className="model-grid">{models.map((model) => <article className="model" key={model.name}><div className="model-image"><Image src={model.image} alt={model.name} fill sizes="(max-width: 800px) 100vw, 33vw" /></div><p className="tier">{model.series}</p><h3>{model.name}</h3><p>{model.copy}</p><div className="model-bottom"><span>From {model.from}</span><a href="/collection">Explore <b>→</b></a><a href="#consult" onClick={() => setSelectedModel(model.name)}>Inquire <b>→</b></a></div></article>)}</div></section>
 
     <section className="difference" id="difference"><div className="difference-image"><Image src="https://static.wixstatic.com/media/3e9782_917aeca8e5f2458d962ae1bbdde57a7c~mv2.jpeg" alt="Bass One instrument detail" fill sizes="(max-width: 800px) 100vw, 45vw" /></div><div className="difference-copy"><h2>Designed around the <em>human player.</em></h2><div className="principles"><div><h3>Balance</h3><p>Thoughtful weight distribution reduces the strain of a neck-heavy or body-heavy instrument through the longest sets and sessions.</p></div><div><h3>Natural movement</h3><p>Ergonomic neck contours and zero-fret construction are designed to meet the hand in its natural range of motion.</p></div><div><h3>Responsive tone</h3><p>Careful wood selection and studio-minded electronics help the instrument speak with a lighter, more musical touch.</p></div></div></div></section>
 
