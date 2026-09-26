@@ -6,3 +6,5 @@
 
 /* Unnumbered editorial layout */
 .principles>div{grid-template-columns:160px 1fr}.order ol li{grid-template-columns:1fr}@media(max-width:800px){.principles>div{grid-template-columns:1fr}.principles p{grid-column:auto}}
+
+.brand{display:inline-flex;align-items:center;gap:.75rem;white-space:nowrap}.brand-emblem{display:block;width:45px;height:45px;object-fit:contain}.brand i{color:#d7bb83}footer .brand-emblem{width:56px;height:56px}@media(max-width:800px){.brand-emblem{width:37px;height:37px}.brand{gap:.4rem;font-size:.87rem}}
