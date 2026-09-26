@@ -15,9 +15,11 @@ function salesEmail(subject: string) {
 
 export default function Home() {
   const [sent, setSent] = useState(false);
+  const [formStatus, setFormStatus] = useState("");
+  const [submitting, setSubmitting] = useState(false);
   const [selectedModel, setSelectedModel] = useState("Custom consultation");
   useEffect(() => { const model = new URLSearchParams(window.location.search).get("model"); if (model && ["Awesome One","Incredible One","Magnificent One","Custom consultation"].includes(model)) setSelectedModel(model); }, []);
-  function submit(event: FormEvent<HTMLFormElement>) {
+  async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const name = String(data.get("name") || "");
@@ -25,8 +27,17 @@ export default function Home() {
     const interest = String(data.get("interest") || "");
     const message = String(data.get("message") || "");
     const body = `Name: ${name}\nEmail: ${email}\nInterest: ${interest}\n\n${message}`;
-    window.location.href = `${salesEmail(`Bass One inquiry — ${interest}`)}&body=${encodeURIComponent(body)}`;
-    setSent(true);
+    setSubmitting(true);
+    setFormStatus("");
+    try {
+      const response = await fetch("/api/inquiry", {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name,email,interest,message,website:String(data.get("website")||"")})});
+      if (!response.ok) throw new Error("Email service unavailable");
+      setSent(true);
+      setFormStatus("Thank you. Your inquiry has been sent to Bass One.");
+      event.currentTarget.reset();
+    } catch {
+      setFormStatus("Online delivery is not available yet. Use the email link below to send your inquiry.");
+    } finally { setSubmitting(false); }
   }
 
   const structuredData = {
@@ -65,7 +76,7 @@ export default function Home() {
 
     <section className="order section"><div><h2>From first question<br/><em>to first note.</em></h2></div><ol><li><span>01</span><div><h3>Choose your series</h3><p>Begin with the Awesome, Incredible, or Magnificent One—or simply tell us what you need from an instrument.</p></div></li><li><span>02</span><div><h3>Speak with a Bass One specialist</h3><p>We&apos;ll clarify strings, scale, tone, visual direction, and the best starting point for your work.</p></div></li><li><span>03</span><div><h3>Confirm your build</h3><p>Receive a clear recommendation and next steps to place your order or begin the custom design process.</p></div></li></ol></section>
 
-    <section className="consult section" id="consult"><div><h2>Let&apos;s find the bass<br/><em>that belongs in your hands.</em></h2><p>Tell us where you are in your journey. Whether you are ready to order a standard model or begin a fully custom instrument, the conversation starts here.</p><p className="sales">Sales & custom builds<br/><a href="mailto:bassoneinfo@gmail.com">bassoneinfo@gmail.com</a><br/>Austin, Texas</p></div><form onSubmit={submit}><label>Your name<input required name="name" placeholder="Your name" /></label><label>Email address<input required type="email" name="email" placeholder="you@email.com" /></label><label>I&apos;m interested in<select name="interest" value={selectedModel} onChange={(event) => setSelectedModel(event.target.value)}><option>Awesome One</option><option>Incredible One</option><option>Magnificent One</option><option>Custom consultation</option><option>Artist / dealer partnership</option></select></label><label>Tell us about your music and ideal bass<textarea name="message" rows={4} placeholder="Your sound, string count, timeline, questions…" /></label><button className="button solid" type="submit">Send inquiry</button>{sent && <p className="form-note">Your email app is opening with your inquiry ready to send.</p>}</form></section>
+    <section className="consult section" id="consult"><div><h2>Let&apos;s find the bass<br/><em>that belongs in your hands.</em></h2><p>Tell us where you are in your journey. Whether you are ready to order a standard model or begin a fully custom instrument, the conversation starts here.</p><p className="sales">Sales & custom builds<br/><a href="mailto:bassoneinfo@gmail.com">bassoneinfo@gmail.com</a><br/>Austin, Texas</p></div><form onSubmit={submit}><label>Your name<input required name="name" placeholder="Your name" /></label><label>Email address<input required type="email" name="email" placeholder="you@email.com" /></label><label>I&apos;m interested in<select name="interest" value={selectedModel} onChange={(event) => setSelectedModel(event.target.value)}><option>Awesome One</option><option>Incredible One</option><option>Magnificent One</option><option>Custom consultation</option><option>Artist / dealer partnership</option></select></label><label>Tell us about your music and ideal bass<textarea name="message" rows={4} placeholder="Your sound, string count, timeline, questions…" /></label><input aria-hidden="true" tabIndex={-1} autoComplete="off" name="website" style={{position:"absolute",left:"-9999px"}}/><button className="button solid" type="submit" disabled={submitting}>{submitting ? "Sending…" : "Send inquiry"}</button>{formStatus && <p className="form-note" role="status">{formStatus}</p>}<a className="textlink" href={salesEmail("Bass One ownership inquiry")}>Or contact Bass One by email →</a></form></section>
     <footer><a className="brand" href="#top"><img className="brand-emblem" src="/bass-one-emblem.svg" alt="Bass One official gold emblem" /><span>BASS <i>ONE</i></span></a><p>Handcrafted instruments for a life in music.</p><p>© {new Date().getFullYear()} Bass One Basses</p></footer>
   </main></>;
 }
