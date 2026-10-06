@@ -63,3 +63,15 @@
   .model-image img{padding:12px}
   .sales-instrument-photo img{padding:14px}
 }
+
+
+/* Landscape-only image scale increase; portrait remains unchanged */
+@media (orientation: landscape) and (min-width: 801px){
+  .model-image img,
+  .sales-instrument-photo img{
+    transform:scale(1.20);
+  }
+  .model:hover img{
+    transform:scale(1.23);
+  }
+}
