@@ -4,7 +4,7 @@ import Image from "next/image";
 import { FormEvent, useEffect, useState } from "react";
 
 const models = [
-  { name: "Awesome One", series: "Professional Series", from: "$1,998", image: "https://static.wixstatic.com/media/3e9782_be29805b14db450cb1e01274bcb364df~mv2.jpg", copy: "The essential Bass One experience: bold finish, active/passive versatility, and the comfort to play longer." },
+  { name: "Awesome One", series: "Professional Series", from: "$1,998", image: "/awesome-one.jpg", copy: "The essential Bass One experience: Sapphire Blue Silhouette Custom Finish, active/passive versatility, and the comfort to play longer." },
   { name: "Incredible One", series: "Premium Series", from: "$3,148", image: "https://static.wixstatic.com/media/3e9782_91fb8dcd74cc4b9bb44b4ff7a9d04ebd~mv2.png", copy: "Maple neck, alder body back, and refined construction for demanding players." },
   { name: "Magnificent One", series: "Custom Series", from: "$5,298", image: "https://static.wixstatic.com/media/3e9782_dda855938083440da828ab81e6f3e85f~mv2.jpeg", copy: "Seven strings, mesquite neck, mahogany body back, colored wood, and gold hardware—shaped around your musical vision." },
 ];
