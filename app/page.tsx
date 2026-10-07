@@ -4,9 +4,9 @@ import Image from "next/image";
 import { FormEvent, useEffect, useState } from "react";
 
 const models = [
-  { name: "Awesome One", series: "Professional Series", from: "$1,998", image: "/awesome-one.jpg", copy: "The essential Bass One experience: Sapphire Blue Silhouette Custom Finish, active/passive versatility, and the comfort to play longer." },
+  { name: "Awesome One", series: "Professional Series", from: "$1,998", image: "/awesome-one.jpg", copy: "Sapphire Blue Silhouette Custom Finish, active/passive versatility, and the comfort to play longer." },
   { name: "Incredible One", series: "Premium Series", from: "$3,148", image: "/incredible-one.jpg", copy: "Sienna Burst Silhouette Custom Finish over Birdseye Maple, Serial Killer™ Electronics, and Balanced Line Out." },
-  { name: "Magnificent One", series: "Custom Series", from: "$5,298", image: "https://static.wixstatic.com/media/3e9782_dda855938083440da828ab81e6f3e85f~mv2.jpeg", copy: "Seven strings, mesquite neck, mahogany body back, colored wood, and gold hardware—shaped around your musical vision." },
+  { name: "Magnificent One", series: "Custom Series", from: "$5,298", image: "/magnificent-one.jpg", copy: "Natural Quilted Maple Silhouette Custom Finish, Purpleheart Fingerboard, Serial Killer™ Electronics Package, Balanced Line Out, and Hipshot Hardware." },
 ];
 
 function salesEmail(subject: string) {
