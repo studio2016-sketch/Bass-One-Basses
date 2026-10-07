@@ -69,10 +69,10 @@
 @media (orientation: landscape) and (min-width: 801px){
   .model-image img,
   .sales-instrument-photo img{
-    transform:translateY(5%) scale(1.5);
+    transform:translateY(3%) scale(1.5);
     transform-origin:center center;
   }
   .model:hover img{
-    transform:translateY(5%) scale(1.53);
+    transform:translateY(3%) scale(1.53);
   }
 }
