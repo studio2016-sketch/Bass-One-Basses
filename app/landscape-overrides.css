@@ -1,0 +1,13 @@
+/* Bass One model photography: landscape-only enlargement.
+   Portrait/mobile sizing remains governed by globals.css. */
+@media (orientation: landscape) and (min-width: 801px) {
+  .model-image img,
+  .sales-instrument-photo img {
+    transform: scale(1.656) !important;
+    transform-origin: center center;
+  }
+
+  .model:hover img {
+    transform: scale(1.69) !important;
+  }
+}
