@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import "./landscape-overrides.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://bass-one-basses.vercel.app"),
