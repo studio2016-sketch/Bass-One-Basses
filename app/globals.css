@@ -85,3 +85,13 @@
   .navlinks{gap:1.15rem;font-size:.66rem;letter-spacing:.055em}
   .navcta{padding:.55rem .75rem;font-size:.64rem;letter-spacing:.075em}
 }
+
+
+/* Distinctive positioning line for each Bass One instrument family */
+.sales-tagline{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(1.35rem,2.2vw,2rem);
+  line-height:1.15;
+  color:#ead6aa !important;
+  margin:.35rem 0 1.4rem;
+}
