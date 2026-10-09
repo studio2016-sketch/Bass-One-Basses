@@ -4,9 +4,9 @@ import Image from "next/image";
 import { FormEvent, useEffect, useState } from "react";
 
 const models = [
-  { name: "Awesome One", series: "Professional Series", from: "$1,998", image: "/awesome-one.jpg", copy: "Sapphire Blue Silhouette Custom Finish, active/passive versatility, and the comfort to play longer." },
-  { name: "Incredible One", series: "Premium Series", from: "$3,148", image: "/incredible-one.jpg", copy: "Sienna Burst Silhouette Custom Finish over Birdseye Maple, Serial Killer™ Electronics, and Balanced Line Out." },
-  { name: "Magnificent One", series: "Custom Series", from: "$5,298", image: "/magnificent-one.jpg", copy: "Natural Quilted Maple Silhouette Custom Finish, Purpleheart Fingerboard, Serial Killer™ Electronics Package, Balanced Line Out, and Hipshot Hardware." },
+  { name: "Awesome One", series: "Professional Series", from: "$1,998", image: "/awesome-one.jpg", copy: "Versatility. Comfort. Performance. Professional performance with limitless possibilities." },
+  { name: "Incredible One", series: "Premium Series", from: "$3,148", image: "/incredible-one.jpg", copy: "Refinement. Character. Craftsmanship. Exceptional materials with distinctive character." },
+  { name: "Magnificent One", series: "Stage and Studio Elite Series", from: "$5,298", image: "/magnificent-one.jpg", copy: "Individuality. Exclusivity. Custom expression. Masterful craftsmanship without compromise." },
 ];
 
 function salesEmail(subject: string) {
