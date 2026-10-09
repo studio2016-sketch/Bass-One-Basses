@@ -54,14 +54,22 @@
 .model-image img{padding:18px}
 .sales-instrument-photo img{padding:22px}
 @media(max-width:800px){
-  .model-image,
-  .sales-instrument-photo{
+  .model-image{
     aspect-ratio:4/3;
     height:auto;
     min-height:0;
   }
+  .sales-instrument-photo{
+    aspect-ratio:3/4;
+    height:auto;
+    min-height:0;
+  }
   .model-image img{padding:12px}
-  .sales-instrument-photo img{padding:14px}
+  .sales-instrument-photo img{
+    padding:4px;
+    transform:scale(1.02);
+    transform-origin:center center;
+  }
 }
 
 
