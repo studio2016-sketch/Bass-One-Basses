@@ -103,3 +103,18 @@
   color:#ead6aa !important;
   margin:.35rem 0 1.4rem;
 }
+
+
+/* Maximize homepage model photography on portrait/mobile, matching Collection page treatment */
+@media(max-width:800px){
+  .model-image{
+    aspect-ratio:3/4;
+    height:auto;
+    min-height:0;
+  }
+  .model-image img{
+    padding:4px;
+    transform:scale(1.02);
+    transform-origin:center center;
+  }
+}
