@@ -15,17 +15,13 @@ const endorsementCards = [
   { src: "/endorsement-chris-anderson.png", alt: "Chris Anderson Bass One artist endorsement" },
 ];
 
-const bassGallery = [
-  { src: "/gallery-mr-blackman-2.jpg", alt: "Bass One Mr. Blackman custom bass" },
-  { src: "/gallery-blue-piccolo.jpg", alt: "Bass One blue piccolo bass" },
-  { src: "/gallery-koa-short-scale-6.jpg", alt: "Bass One Koa short-scale six-string bass" },
-  { src: "/gallery-magnificent-8.jpg", alt: "Bass One Magnificent eight-string bass" },
-  { src: "/gallery-mr-blackman-card.jpg", alt: "Bass One Mr. Blackman bass presentation" },
-  { src: "/gallery-black-pearl.jpg", alt: "Bass One Black Pearl custom bass" },
-  { src: "/gallery-little-hannah.jpg", alt: "Bass One Little Hannah custom bass" },
-  { src: "/gallery-woods.jpg", alt: "Bass One woods used in construction reference" },
-  { src: "/gallery-puddin-2.jpg", alt: "Bass One Puddin custom bass" },
-  { src: "/gallery-9-string-maple.jpg", alt: "Bass One nine-string maple bass" },
+c
+
+const neckWoodSheet = [
+  { name: "Eastern Hardrock Maple", note: "Featured neck / center-block wood for the Incredible One." },
+  { name: "Mesquite", note: "Featured neck / center-block wood for the Magnificent One." },
+  { name: "Purpleheart", note: "Documented in Bass One custom laminate and fingerboard builds." },
+  { name: "Maple", note: "Documented as part of Bass One custom laminate neck and body-block construction." },
 ];
 
 const strapProducts = [
@@ -93,9 +89,66 @@ export default function Home() {
 
     <section className="heritage section" id="heritage"><div className="heritage-head"><h2>A solution born from pain,<br/><em>healing, and calling.</em></h2></div><div className="heritage-grid"><div><p>For more than thirty years, Dr. Duane Greene has played, composed, and listened closely to the obstacles bassists face: weight, fatigue, unnatural neck contours, and instruments that demand too much force to make a clear sound.</p><p>After experiencing hand and back pain in his own musical journey—and a profound healing while playing in church—he set out to build another way.</p></div><div className="quote"><p>“The easier the bass is to play, the less stress is on the hands of the player.”</p><span>Dr. Duane Greene / Founder & Luthier</span></div></div></section>
 
-    <section className="artists section" id="artists"><div className="artists-intro"><h2>Made for musicians<br/><em>who cannot compromise.</em></h2><p>Players choose Bass One for the part of the story that matters most: how an instrument feels after the first hour, the final set, and the sessions in between.</p></div><div className="endorsement-cards">{endorsementCards.map(card => <figure className="endorsement-card" key={card.src}><Image src={card.src} alt={card.alt} fill sizes="(max-width: 800px) 100vw, 33vw" /></figure>)}</div><div className="testimonial-video-head"><p className="eyebrow">Hear it from the players</p><h3>Video testimonials</h3></div><div className="testimonial-videos"><article className="testimonial-video"><video controls playsInline preload="metadata" src="https://www.dropbox.com/scl/fi/2ugc8z2dsqx4sdjhxzd6r/Dr.-Jim-King-Ergonomic-Endorsement.MOV?rlkey=72bylcb9rl77xuydjv1qxeolj&raw=1"/><h4>Dr. Jim King</h4><p>Ergonomic endorsement</p></article><article className="testimonial-video"><video controls playsInline preload="metadata" src="https://www.dropbox.com/scl/fi/7uonsd1o3kd42k4y7srm2/Jazz-BassMusic-Man-2.MOV?rlkey=76olfc9ddnx5drz4508ot2p3q&raw=1"/><h4>Bass One Testimonial</h4><p>Jazz Bass / Music Man comparison</p></article></div></section>
+    <section className="artists section" id="artists">
+      <div className="artists-intro endorsements-intro">
+        <p className="eyebrow">Player & specialist perspectives</p>
+        <h2>Bass One<br/><em>Endorsements.</em></h2>
+        <p>From musicians who live with an instrument for hours at a time to specialists focused on hand health and ergonomics, these perspectives speak to the part of the Bass One philosophy that can only be understood by experience.</p>
+      </div>
 
-    <section className="tone"><div><h2>Wood. Light.<br/><em>Living tone.</em></h2><p>Each material is selected for its voice as well as its visual character: the warmth of mahogany, the focus of mesquite, the detail of exotic tops, and the elegance of a finish made to last.</p></div><div className="tone-images"><Image src="https://static.wixstatic.com/media/3e9782_1ae3015e55fa4e2fb0db7f629befae78~mv2.png" alt="Bass One detail" width={360} height={520}/><Image src="https://static.wixstatic.com/media/3e9782_e654ddac6c4342f6b5efba75e4ffdd26~mv2.jpeg" alt="Bass One handcrafted instrument" width={360} height={520}/></div></section>
+      <div className="endorsement-category">
+        <div className="endorsement-category-head"><p className="eyebrow">01</p><h3>Ergonomics</h3></div>
+
+        <article className="official-endorsement">
+          <div className="official-endorsement-copy">
+            <p className="eyebrow">Official Endorsements</p>
+            <h4>Dr. Jim King</h4>
+            <p className="endorsement-role">American Society of Hand Therapists</p>
+            <p>A specialist perspective on the ergonomic principles behind the Bass One playing experience.</p>
+          </div>
+          <video controls playsInline preload="metadata" src="https://www.dropbox.com/scl/fi/2ugc8z2dsqx4sdjhxzd6r/Dr.-Jim-King-Ergonomic-Endorsement.MOV?rlkey=72bylcb9rl77xuydjv1qxeolj&raw=1"/>
+        </article>
+
+        <article className="jill-endorsement">
+          <div className="jill-copy">
+            <p className="eyebrow">Musician ergonomics</p>
+            <h4>Jill Gambaro</h4>
+            <blockquote>“This neck is from a 6- String Bass? This so comfortable I could play this all night without any pain at all!”</blockquote>
+            <p>Author of <em>The Truth About Carpal Tunnel Syndrome: Finding Answers, Getting Well</em>.</p>
+            <a className="textlink" href="https://www.bloomsbury.com/us/truth-about-carpal-tunnel-syndrome-9781538107508/" target="_blank" rel="noreferrer">View Jill Gambaro&apos;s book →</a>
+          </div>
+          <div className="jill-media">
+            <a className="jill-book" href="https://www.bloomsbury.com/us/truth-about-carpal-tunnel-syndrome-9781538107508/" target="_blank" rel="noreferrer">
+              <img src="https://covers.openlibrary.org/isbn/9781538107508-L.jpg" alt="The Truth About Carpal Tunnel Syndrome by Jill Gambaro book cover"/>
+            </a>
+            <a className="jill-profile-link" href="https://www.goodreads.com/author/show/7786264.Jill_Gambaro" target="_blank" rel="noreferrer" aria-label="View Jill Gambaro author profile">
+              <span className="jill-profile-monogram">JG</span>
+              <span>Author profile & photo</span>
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <div className="endorsement-category artist-endorsement-category">
+        <div className="endorsement-category-head"><p className="eyebrow">02</p><h3>Artist Endorsements</h3></div>
+        <div className="endorsement-cards">{endorsementCards.map(card => <figure className="endorsement-card" key={card.src}><Image src={card.src} alt={card.alt} fill sizes="(max-width: 800px) 100vw, 33vw" /></figure>)}</div>
+      </div>
+    </section>
+
+    <section className="tone wood-tone" id="woods">
+      <div className="wood-tone-copy"><p className="eyebrow">Materials with purpose</p><h2>Wood. Light.<br/><em>Living tone.</em></h2><p>Each material is selected for its voice as well as its visual character. Bass One combines structural woods, exotic tops, neck laminates, and fingerboard choices around the needs of the individual instrument and player.</p></div>
+      <div className="wood-sheets">
+        <article className="wood-sheet body-wood-sheet">
+          <div className="wood-sheet-head"><p className="eyebrow">Body woods</p><h3>Body Tops & Backs</h3></div>
+          <div className="wood-sheet-image"><Image src="/gallery-woods.jpg" alt="Bass One body woods used in construction" fill sizes="(max-width:800px) 100vw, 50vw"/></div>
+        </article>
+        <article className="wood-sheet neck-wood-sheet">
+          <div className="wood-sheet-head"><p className="eyebrow">Neck construction</p><h3>Neck & Fingerboard Woods</h3></div>
+          <div className="neck-wood-grid">{neckWoodSheet.map(wood => <div className="neck-wood-card" key={wood.name}><h4>{wood.name}</h4><p>{wood.note}</p></div>)}</div>
+          <p className="wood-sheet-note">Additional exotic fingerboard selections are available through the custom consultation process.</p>
+        </article>
+      </div>
+    </section>
 
     <section className="bass-gallery section" id="gallery"><div className="gallery-head"><p className="eyebrow">Built one instrument at a time</p><h2>The Bass One<br/><em>Gallery.</em></h2><p>A closer look at individual Bass One builds, woods, finishes, hardware choices, and custom expressions.</p></div><div className="gallery-grid">{bassGallery.map((bass,index) => <figure className={"gallery-item gallery-item-"+(index+1)} key={bass.src}><Image src={bass.src} alt={bass.alt} fill sizes="(max-width: 800px) 100vw, 33vw" /></figure>)}</div></section>
 
