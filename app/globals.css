@@ -278,3 +278,19 @@
   .neck-wood-grid{grid-template-columns:1fr}
   .neck-wood-card{min-height:140px}
 }
+
+
+/* Corrected artist endorsement triptych: Jermaine, Barry, Chris */
+.corrected-endorsement-card{
+  aspect-ratio:1/1;
+  background-image:url("/endorsements-corrected-triptych.png");
+  background-repeat:no-repeat;
+  background-size:300% 100%;
+  background-color:#090909;
+}
+.corrected-endorsement-card.endorsement-left{background-position:left center}
+.corrected-endorsement-card.endorsement-center{background-position:center center}
+.corrected-endorsement-card.endorsement-right{background-position:right center}
+@media(max-width:800px){
+  .corrected-endorsement-card{aspect-ratio:1/1}
+}
