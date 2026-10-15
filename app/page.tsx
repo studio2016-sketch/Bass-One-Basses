@@ -15,7 +15,16 @@ const endorsementCards = [
   { src: "/endorsement-chris-anderson.png", alt: "Chris Anderson Bass One artist endorsement" },
 ];
 
-c
+const bassGallery = [
+  { src: "/gallery-mr-blackman-2.jpg", alt: "Bass One Mr. Blackman custom bass" },
+  { src: "/gallery-blue-piccolo.jpg", alt: "Bass One blue piccolo bass" },
+  { src: "/gallery-koa-short-scale-6.jpg", alt: "Bass One Koa short-scale six-string bass" },
+  { src: "/gallery-mr-blackman-card.jpg", alt: "Bass One Mr. Blackman bass presentation" },
+  { src: "/gallery-black-pearl.jpg", alt: "Bass One Black Pearl custom bass" },
+  { src: "/gallery-little-hannah.jpg", alt: "Bass One Little Hannah custom bass" },
+  { src: "/gallery-puddin-2.jpg", alt: "Bass One Puddin custom bass" },
+  { src: "/gallery-9-string-maple.jpg", alt: "Bass One nine-string maple bass" },
+];
 
 const neckWoodSheet = [
   { name: "Eastern Hardrock Maple", note: "Featured neck / center-block wood for the Incredible One." },
