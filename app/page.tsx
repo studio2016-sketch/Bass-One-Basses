@@ -129,7 +129,7 @@ export default function Home() {
           </div>
           <div className="jill-media">
             <a className="jill-book" href="https://www.bloomsbury.com/us/truth-about-carpal-tunnel-syndrome-9781538107508/" target="_blank" rel="noreferrer">
-              <img src="https://covers.openlibrary.org/isbn/9781538107508-L.jpg" alt="The Truth About Carpal Tunnel Syndrome by Jill Gambaro book cover"/>
+              <img src="/jill-gambaro-book-cover.jpeg" alt="The Truth About Carpal Tunnel Syndrome by Jill Gambaro book cover"/>
             </a>
             <a className="jill-profile-link" href="https://www.goodreads.com/author/show/7786264.Jill_Gambaro" target="_blank" rel="noreferrer" aria-label="View Jill Gambaro author profile">
               <span className="jill-profile-monogram">JG</span>
