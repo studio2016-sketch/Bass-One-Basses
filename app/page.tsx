@@ -10,9 +10,9 @@ const models = [
 ];
 
 const endorsementCards = [
-  { name: "Jermaine Williams", position: "endorsement-left" },
-  { name: "Barry Jackson", position: "endorsement-center" },
-  { name: "Chris Anderson", position: "endorsement-right" },
+  { name: "Jermaine Williams", src: "/endorsement-jermaine-williams.png", alt: "Jermaine Williams Bass One endorsement card" },
+  { name: "Barry Jackson", src: "/endorsement-barry-jackson.png", alt: "Barry Jackson Bass One endorsement card" },
+  { name: "Chris Anderson", src: "/endorsement-chris-anderson.png", alt: "Chris Anderson Bass One endorsement card" },
 ];
 
 const bassGallery = [
@@ -116,7 +116,7 @@ export default function Home() {
             <p className="endorsement-role">American Society of Hand Therapists</p>
             <p>A specialist perspective on the ergonomic principles behind the Bass One playing experience.</p>
           </div>
-          <video controls playsInline preload="metadata" src="https://www.dropbox.com/scl/fi/2ugc8z2dsqx4sdjhxzd6r/Dr.-Jim-King-Ergonomic-Endorsement.MOV?rlkey=72bylcb9rl77xuydjv1qxeolj&raw=1"/>
+          <video controls playsInline preload="metadata" poster="/incredible-one.jpg" src="https://www.dropbox.com/scl/fi/2ugc8z2dsqx4sdjhxzd6r/Dr.-Jim-King-Ergonomic-Endorsement.MOV?rlkey=72bylcb9rl77xuydjv1qxeolj&raw=1"/>
         </article>
 
         <article className="jill-endorsement">
@@ -133,7 +133,7 @@ export default function Home() {
             </a>
             <a className="jill-profile-link" href="https://www.goodreads.com/author/show/7786264.Jill_Gambaro" target="_blank" rel="noreferrer" aria-label="View Jill Gambaro author profile">
               <span className="jill-profile-monogram">JG</span>
-              <span>Author profile & photo</span>
+              <span><strong>Jill Gambaro</strong><small>Author profile · ergonomics & repetitive-strain advocacy</small></span>
             </a>
           </div>
         </article>
@@ -141,7 +141,7 @@ export default function Home() {
 
       <div className="endorsement-category artist-endorsement-category">
         <div className="endorsement-category-head"><p className="eyebrow">02</p><h3>Artist Endorsements</h3></div>
-        <div className="endorsement-cards">{endorsementCards.map(card => <figure className={"endorsement-card corrected-endorsement-card "+card.position} key={card.name} aria-label={card.name+" Bass One artist endorsement"} />)}</div>
+        <div className="endorsement-cards">{endorsementCards.map(card => <figure className="endorsement-card" key={card.name}><Image src={card.src} alt={card.alt} fill sizes="(max-width: 800px) 100vw, 33vw" /></figure>)}</div>
       </div>
     </section>
 
