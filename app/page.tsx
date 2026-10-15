@@ -22,6 +22,16 @@ const bassGallery = [
   { src: "/gallery-magnificent-8.jpg", alt: "Bass One Magnificent eight-string bass" },
   { src: "/gallery-mr-blackman-card.jpg", alt: "Bass One Mr. Blackman bass presentation" },
   { src: "/gallery-black-pearl.jpg", alt: "Bass One Black Pearl custom bass" },
+  { src: "/gallery-little-hannah.jpg", alt: "Bass One Little Hannah custom bass" },
+  { src: "/gallery-woods.jpg", alt: "Bass One woods used in construction reference" },
+  { src: "/gallery-puddin-2.jpg", alt: "Bass One Puddin custom bass" },
+  { src: "/gallery-9-string-maple.jpg", alt: "Bass One nine-string maple bass" },
+];
+
+const strapProducts = [
+  { name: "Baby Cheetah", src: "/strap-baby-cheetah-front.jpg", alt: "Baby Cheetah custom ergonomic Bass One bass strap" },
+  { name: "Black Lizard", src: "/strap-black-lizard-front.jpg", alt: "Black Lizard custom ergonomic Bass One bass strap" },
+  { name: "Black Lizard — adjustment view", src: "/strap-black-lizard-points.jpg", alt: "Black Lizard Bass One strap showing adjustment points" },
 ];
 
 function salesEmail(subject: string) {
@@ -88,6 +98,8 @@ export default function Home() {
     <section className="tone"><div><h2>Wood. Light.<br/><em>Living tone.</em></h2><p>Each material is selected for its voice as well as its visual character: the warmth of mahogany, the focus of mesquite, the detail of exotic tops, and the elegance of a finish made to last.</p></div><div className="tone-images"><Image src="https://static.wixstatic.com/media/3e9782_1ae3015e55fa4e2fb0db7f629befae78~mv2.png" alt="Bass One detail" width={360} height={520}/><Image src="https://static.wixstatic.com/media/3e9782_e654ddac6c4342f6b5efba75e4ffdd26~mv2.jpeg" alt="Bass One handcrafted instrument" width={360} height={520}/></div></section>
 
     <section className="bass-gallery section" id="gallery"><div className="gallery-head"><p className="eyebrow">Built one instrument at a time</p><h2>The Bass One<br/><em>Gallery.</em></h2><p>A closer look at individual Bass One builds, woods, finishes, hardware choices, and custom expressions.</p></div><div className="gallery-grid">{bassGallery.map((bass,index) => <figure className={"gallery-item gallery-item-"+(index+1)} key={bass.src}><Image src={bass.src} alt={bass.alt} fill sizes="(max-width: 800px) 100vw, 33vw" /></figure>)}</div></section>
+
+    <section className="straps section" id="straps"><div className="strap-head"><p className="eyebrow">Comfort beyond the instrument</p><h2>Custom ergonomic<br/><em>bass straps.</em></h2><p>Designed to support the player through long rehearsals, sessions, and performances, Bass One strap options extend the same player-first philosophy beyond the instrument itself. Choose a finish and configuration that complements your bass and your playing style.</p></div><div className="strap-grid">{strapProducts.map((strap,index)=><article className="strap-card" key={strap.src}><div className="strap-image"><Image src={strap.src} alt={strap.alt} fill sizes="(max-width: 800px) 100vw, 33vw"/></div><div className="strap-copy"><p className="tier">CUSTOM STRAP {String(index+1).padStart(2,"0")}</p><h3>{strap.name}</h3><a className="button gold" href={salesEmail("Bass One strap purchase inquiry — "+strap.name)}>Request purchase link</a></div></article>)}</div><div className="commerce-note"><h3>Ready to reserve a standard Bass One?</h3><p>Direct online deposit checkout is being prepared. For now, request a secure deposit link for a standard Awesome One or Incredible One. Fully custom Magnificent One builds continue through the custom consultation process.</p><div className="actions"><a className="button solid" href={salesEmail("Awesome One standard bass deposit")}>Request Awesome One deposit link</a><a className="button solid" href={salesEmail("Incredible One standard bass deposit")}>Request Incredible One deposit link</a><a className="textlink" href="#consult">Begin a custom build →</a></div></div></section>
 
     <section className="custom" id="custom"><div className="custom-art"><Image src="https://static.wixstatic.com/media/3e9782_ffe190e9d6444da08b0bea83e02bbdd1~mv2.jpg" alt="Custom Bass One bass" fill sizes="(max-width: 800px) 100vw, 55vw" /></div><div><h2>Your bass.<br/><em>Your signature.</em></h2><p>A custom Bass One is a focused collaboration between player and builder. Scale, strings, woods, electronics, hardware, finish, lighting—every choice serves your sound, your hands, and the life you want the instrument to live.</p><ul><li>Single or dual-cutaway body</li><li>4–7 strings and custom scale options</li><li>Custom woods, finish, and hardware</li><li>Premium electronics, balanced XLR, and LED options</li></ul><a className="button gold" href="#consult">Start a custom consultation</a></div></section>
 

@@ -191,3 +191,37 @@
   .testimonial-video-head{margin-top:3rem}
   .testimonial-videos{grid-template-columns:1fr}
 }
+
+
+/* Expanded gallery */
+.gallery-item-7{grid-column:span 4;grid-row:span 4}
+.gallery-item-8{grid-column:span 8;grid-row:span 6}
+.gallery-item-9{grid-column:span 4;grid-row:span 7}
+.gallery-item-10{grid-column:span 4;grid-row:span 7}
+
+/* Custom ergonomic bass straps + purchase/deposit handoff */
+.straps{background:linear-gradient(145deg,#0a0a0a,#17110d)}
+.strap-head{display:grid;grid-template-columns:1.1fr .9fr;gap:4rem;align-items:end;margin-bottom:3rem}
+.strap-head .eyebrow{grid-column:1/-1;margin-bottom:0}
+.strap-head>p:last-child{color:var(--muted);max-width:560px;margin:0}
+.strap-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}
+.strap-card{background:#12110f;border-top:2px solid var(--gold)}
+.strap-image{position:relative;aspect-ratio:4/3;background:#f3f0e8;overflow:hidden}
+.strap-image img{object-fit:contain;padding:10px}
+.strap-copy{padding:1.25rem}
+.strap-copy .tier{margin:0 0 .5rem}
+.strap-copy h3{font:500 1.7rem 'Playfair Display',Georgia,serif;margin:0 0 1.2rem}
+.commerce-note{margin-top:2.5rem;padding:2rem;border:1px solid #c9a45f55;background:#0d0c0a}
+.commerce-note h3{font:500 clamp(1.8rem,3vw,2.8rem) 'Playfair Display',Georgia,serif;margin:0 0 .75rem}
+.commerce-note p{color:var(--muted);max-width:800px}
+.commerce-note .actions{flex-wrap:wrap;margin-top:1.5rem}
+@media(max-width:800px){
+  .gallery-item-7,.gallery-item-8,.gallery-item-9,.gallery-item-10{grid-column:auto;grid-row:auto;aspect-ratio:3/4}
+  .gallery-item-7,.gallery-item-8{aspect-ratio:4/5}
+  .strap-head{grid-template-columns:1fr;gap:1rem}
+  .strap-grid{grid-template-columns:1fr}
+  .strap-image{aspect-ratio:4/3}
+  .commerce-note{padding:1.35rem}
+  .commerce-note .actions{align-items:stretch}
+  .commerce-note .button{width:100%;text-align:center}
+}
