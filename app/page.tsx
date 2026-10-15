@@ -9,6 +9,21 @@ const models = [
   { name: "Magnificent One", series: "Stage and Studio Elite Series", from: "$5,298", image: "/magnificent-one.jpg", copy: "Individuality. Exclusivity. Custom expression. Masterful craftsmanship without compromise." },
 ];
 
+const endorsementCards = [
+  { src: "/endorsement-barry-jackson.jpg", alt: "Barry Jackson Bass One artist endorsement" },
+  { src: "/endorsement-chris-anderson.jpg", alt: "Chris Anderson Bass One artist endorsement" },
+  { src: "/endorsement-jermaine-williams.jpg", alt: "Jermaine Williams Bass One artist endorsement" },
+];
+
+const bassGallery = [
+  { src: "/gallery-mr-blackman-2.jpg", alt: "Bass One Mr. Blackman custom bass" },
+  { src: "/gallery-blue-piccolo.jpg", alt: "Bass One blue piccolo bass" },
+  { src: "/gallery-koa-short-scale-6.jpg", alt: "Bass One Koa short-scale six-string bass" },
+  { src: "/gallery-magnificent-8.jpg", alt: "Bass One Magnificent eight-string bass" },
+  { src: "/gallery-mr-blackman-card.jpg", alt: "Bass One Mr. Blackman bass presentation" },
+  { src: "/gallery-black-pearl.jpg", alt: "Bass One Black Pearl custom bass" },
+];
+
 function salesEmail(subject: string) {
   return `mailto:bassoneinfo@gmail.com?subject=${encodeURIComponent(subject)}`;
 }
@@ -68,9 +83,11 @@ export default function Home() {
 
     <section className="heritage section" id="heritage"><div className="heritage-head"><h2>A solution born from pain,<br/><em>healing, and calling.</em></h2></div><div className="heritage-grid"><div><p>For more than thirty years, Dr. Duane Greene has played, composed, and listened closely to the obstacles bassists face: weight, fatigue, unnatural neck contours, and instruments that demand too much force to make a clear sound.</p><p>After experiencing hand and back pain in his own musical journey—and a profound healing while playing in church—he set out to build another way.</p></div><div className="quote"><p>“The easier the bass is to play, the less stress is on the hands of the player.”</p><span>Dr. Duane Greene / Founder & Luthier</span></div></div></section>
 
-    <section className="artists section"><div className="artists-intro"><h2>Made for musicians<br/><em>who cannot compromise.</em></h2><p>Players choose Bass One for the part of the story that matters most: how an instrument feels after the first hour, the final set, and the sessions in between.</p></div><div className="testimonials"><article><p>“It&apos;s beautifully handcrafted and lightweight—and handles like a dream.”</p><span>Chris Anderson<br/><small>Bassist for Janet Jackson, Christina Aguilera, Boyz II Men, and Yolanda Adams</small></span></article><article><p>“I can stand all night and play this bass.”</p><span>Barry Jackson<br/><small>Studio and session bassist</small></span></article><article><p>“This bass is lighter than my 4-string… This Bass is a keeper.”</p><span>Drue Williams<br/><small>Founder, Boom Bass Cabinets</small></span></article></div></section>
+    <section className="artists section" id="artists"><div className="artists-intro"><h2>Made for musicians<br/><em>who cannot compromise.</em></h2><p>Players choose Bass One for the part of the story that matters most: how an instrument feels after the first hour, the final set, and the sessions in between.</p></div><div className="endorsement-cards">{endorsementCards.map(card => <figure className="endorsement-card" key={card.src}><Image src={card.src} alt={card.alt} fill sizes="(max-width: 800px) 100vw, 33vw" /></figure>)}</div></section>
 
     <section className="tone"><div><h2>Wood. Light.<br/><em>Living tone.</em></h2><p>Each material is selected for its voice as well as its visual character: the warmth of mahogany, the focus of mesquite, the detail of exotic tops, and the elegance of a finish made to last.</p></div><div className="tone-images"><Image src="https://static.wixstatic.com/media/3e9782_1ae3015e55fa4e2fb0db7f629befae78~mv2.png" alt="Bass One detail" width={360} height={520}/><Image src="https://static.wixstatic.com/media/3e9782_e654ddac6c4342f6b5efba75e4ffdd26~mv2.jpeg" alt="Bass One handcrafted instrument" width={360} height={520}/></div></section>
+
+    <section className="bass-gallery section" id="gallery"><div className="gallery-head"><p className="eyebrow">Built one instrument at a time</p><h2>The Bass One<br/><em>Gallery.</em></h2><p>A closer look at individual Bass One builds, woods, finishes, hardware choices, and custom expressions.</p></div><div className="gallery-grid">{bassGallery.map((bass,index) => <figure className={"gallery-item gallery-item-"+(index+1)} key={bass.src}><Image src={bass.src} alt={bass.alt} fill sizes="(max-width: 800px) 100vw, 33vw" /></figure>)}</div></section>
 
     <section className="custom" id="custom"><div className="custom-art"><Image src="https://static.wixstatic.com/media/3e9782_ffe190e9d6444da08b0bea83e02bbdd1~mv2.jpg" alt="Custom Bass One bass" fill sizes="(max-width: 800px) 100vw, 55vw" /></div><div><h2>Your bass.<br/><em>Your signature.</em></h2><p>A custom Bass One is a focused collaboration between player and builder. Scale, strings, woods, electronics, hardware, finish, lighting—every choice serves your sound, your hands, and the life you want the instrument to live.</p><ul><li>Single or dual-cutaway body</li><li>4–7 strings and custom scale options</li><li>Custom woods, finish, and hardware</li><li>Premium electronics, balanced XLR, and LED options</li></ul><a className="button gold" href="#consult">Start a custom consultation</a></div></section>
 

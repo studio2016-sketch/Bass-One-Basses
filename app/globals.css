@@ -118,3 +118,62 @@
     transform-origin:center center;
   }
 }
+
+
+/* Artist endorsement cards */
+.endorsement-cards{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1.25rem;
+  margin-top:3rem;
+}
+.endorsement-card{
+  position:relative;
+  aspect-ratio:4/3;
+  margin:0;
+  background:#101010;
+  overflow:hidden;
+  border:1px solid #c9a45f33;
+}
+.endorsement-card img{
+  object-fit:contain;
+}
+
+/* Bass One build gallery */
+.bass-gallery{background:#0b0b0b}
+.gallery-head{display:grid;grid-template-columns:1.1fr .9fr;gap:4rem;align-items:end;margin-bottom:3rem}
+.gallery-head .eyebrow{grid-column:1/-1;margin-bottom:0}
+.gallery-head>p:last-child{color:var(--muted);max-width:520px;margin:0}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  grid-auto-rows:110px;
+  gap:1rem;
+}
+.gallery-item{
+  position:relative;
+  margin:0;
+  overflow:hidden;
+  background:#111;
+  border:1px solid #ffffff12;
+}
+.gallery-item img{object-fit:contain;background:#080808}
+.gallery-item-1{grid-column:span 4;grid-row:span 7}
+.gallery-item-2{grid-column:span 8;grid-row:span 5}
+.gallery-item-3{grid-column:span 4;grid-row:span 7}
+.gallery-item-4{grid-column:span 4;grid-row:span 7}
+.gallery-item-5{grid-column:span 4;grid-row:span 7}
+.gallery-item-6{grid-column:span 8;grid-row:span 6}
+@media(max-width:800px){
+  .endorsement-cards{grid-template-columns:1fr;gap:1rem}
+  .endorsement-card{aspect-ratio:4/3}
+  .gallery-head{grid-template-columns:1fr;gap:1rem}
+  .gallery-grid{grid-template-columns:1fr;grid-auto-rows:auto;gap:1rem}
+  .gallery-item,
+  .gallery-item-1,.gallery-item-2,.gallery-item-3,.gallery-item-4,.gallery-item-5,.gallery-item-6{
+    grid-column:auto;
+    grid-row:auto;
+    aspect-ratio:3/4;
+  }
+  .gallery-item-2,.gallery-item-6{aspect-ratio:4/5}
+}
