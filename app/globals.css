@@ -133,10 +133,12 @@
   margin:0;
   background:#101010;
   overflow:hidden;
-  border:1px solid #c9a45f33;
+  border:1px solid #c9a45f55;
+  box-shadow:0 16px 38px #0008;
 }
 .endorsement-card img{
   object-fit:contain;
+  background:#080808;
 }
 
 /* Bass One build gallery */
@@ -244,7 +246,7 @@
 .jill-media{display:grid;grid-template-columns:1fr;gap:1rem;align-content:start}
 .jill-book{display:block;background:#111;padding:1rem;border:1px solid #c9a45f55;text-align:center}
 .jill-book img{display:block;width:100%;max-height:420px;object-fit:contain;background:#fff}
-.jill-profile-link{min-height:120px;border:1px solid #ffffff16;display:flex;align-items:center;gap:1rem;padding:1rem;color:#e7dcc8}
+.jill-profile-link{min-height:120px;border:1px solid #c9a45f33;display:flex;align-items:center;gap:1rem;padding:1rem;color:#e7dcc8;background:linear-gradient(145deg,#17130f,#0b0b0b)}
 .jill-profile-monogram{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--gold);font:500 1.4rem 'Playfair Display',Georgia,serif;color:#e8c57e;background:#14110d}
 .artist-endorsement-category{margin-top:5rem}
 
@@ -279,21 +281,6 @@
   .neck-wood-card{min-height:140px}
 }
 
-
-/* Corrected artist endorsement triptych: Jermaine, Barry, Chris */
-.corrected-endorsement-card{
-  aspect-ratio:1/1;
-  background-image:url("/endorsements-corrected-triptych.png");
-  background-repeat:no-repeat;
-  background-size:300% 100%;
-  background-color:#090909;
-}
-.corrected-endorsement-card.endorsement-left{background-position:left center}
-.corrected-endorsement-card.endorsement-center{background-position:center center}
-.corrected-endorsement-card.endorsement-right{background-position:right center}
-@media(max-width:800px){
-  .corrected-endorsement-card{aspect-ratio:1/1}
-}
 
 
 /* Individual endorsement card captions */
@@ -341,4 +328,25 @@
   .mobile-menu.is-open{transform:translateY(0);opacity:1;visibility:visible;pointer-events:auto}
   .mobile-menu a{padding:1rem .15rem;border-bottom:1px solid #ffffff12;text-transform:uppercase;letter-spacing:.09em;font-size:.78rem;color:#e7ddca}
   .mobile-menu .mobile-menu-cta{margin-top:.7rem;border:1px solid #c9a45f;padding:.9rem 1rem;color:#f0d69e;text-align:center}
+}
+
+.jill-profile-link>span:last-child{display:flex;flex-direction:column;gap:.3rem}
+.jill-profile-link strong{font:500 1.15rem 'Playfair Display',Georgia,serif;color:#f1e6d2}
+.jill-profile-link small{color:var(--muted);line-height:1.4}
+
+
+/* Page scan repair pass */
+.official-endorsement video{aspect-ratio:16/9;height:auto;min-height:0}
+.jill-book{min-height:320px;display:grid;place-items:center}
+.jill-book img{width:auto;max-width:100%;height:auto;max-height:390px;margin:auto}
+.wood-sheet{overflow:hidden}
+.wood-sheet-image{aspect-ratio:3/4}
+.wood-sheet-image img{object-fit:contain!important;padding:8px}
+.neck-wood-sheet{display:flex;flex-direction:column}
+.neck-wood-grid{flex:1}
+.artist-endorsement-category .endorsement-cards{margin-top:1.5rem}
+@media(max-width:800px){
+  .endorsement-card{aspect-ratio:4/3}
+  .jill-book{min-height:280px}
+  .wood-sheet-image{aspect-ratio:3/4}
 }
