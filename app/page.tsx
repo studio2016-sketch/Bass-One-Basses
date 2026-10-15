@@ -10,9 +10,9 @@ const models = [
 ];
 
 const endorsementCards = [
-  { src: "/endorsement-jermaine-williams.png", alt: "Jermaine Williams Bass One artist endorsement" },
-  { src: "/endorsement-barry-jackson.png", alt: "Barry Jackson Bass One artist endorsement" },
-  { src: "/endorsement-chris-anderson.png", alt: "Chris Anderson Bass One artist endorsement" },
+  { name: "Jermaine Williams", position: "endorsement-left" },
+  { name: "Barry Jackson", position: "endorsement-center" },
+  { name: "Chris Anderson", position: "endorsement-right" },
 ];
 
 const bassGallery = [
@@ -140,7 +140,7 @@ export default function Home() {
 
       <div className="endorsement-category artist-endorsement-category">
         <div className="endorsement-category-head"><p className="eyebrow">02</p><h3>Artist Endorsements</h3></div>
-        <div className="endorsement-cards">{endorsementCards.map(card => <figure className="endorsement-card" key={card.src}><Image src={card.src} alt={card.alt} fill sizes="(max-width: 800px) 100vw, 33vw" /></figure>)}</div>
+        <div className="endorsement-cards">{endorsementCards.map(card => <figure className={"endorsement-card corrected-endorsement-card "+card.position} key={card.name} aria-label={card.name+" Bass One artist endorsement"} />)}</div>
       </div>
     </section>
 
