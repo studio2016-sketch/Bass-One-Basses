@@ -10,9 +10,9 @@ const models = [
 ];
 
 const endorsementCards = [
-  { src: "/endorsement-barry-jackson.jpg", alt: "Barry Jackson Bass One artist endorsement" },
-  { src: "/endorsement-chris-anderson.jpg", alt: "Chris Anderson Bass One artist endorsement" },
-  { src: "/endorsement-jermaine-williams.jpg", alt: "Jermaine Williams Bass One artist endorsement" },
+  { src: "/endorsement-jermaine-williams.png", alt: "Jermaine Williams Bass One artist endorsement" },
+  { src: "/endorsement-barry-jackson.png", alt: "Barry Jackson Bass One artist endorsement" },
+  { src: "/endorsement-chris-anderson.png", alt: "Chris Anderson Bass One artist endorsement" },
 ];
 
 const bassGallery = [
