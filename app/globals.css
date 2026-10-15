@@ -225,3 +225,56 @@
   .commerce-note .actions{align-items:stretch}
   .commerce-note .button{width:100%;text-align:center}
 }
+
+
+/* Bass One Endorsements — categorized presentation */
+.endorsements-intro{max-width:760px}
+.endorsement-category{margin-top:4.5rem}
+.endorsement-category-head{display:flex;align-items:end;gap:1rem;margin-bottom:1.75rem;padding-bottom:1rem;border-bottom:1px solid #ffffff18}
+.endorsement-category-head .eyebrow{margin:0}
+.endorsement-category-head h3{font:500 clamp(2rem,3vw,3rem)/1 'Playfair Display',Georgia,serif;margin:0;color:#f0e6d4}
+.official-endorsement{display:grid;grid-template-columns:.8fr 1.2fr;gap:1.5rem;align-items:stretch;background:#11100f;border-top:2px solid var(--gold);padding:1.25rem}
+.official-endorsement-copy{padding:1.5rem}
+.official-endorsement-copy h4,.jill-copy h4{font:500 clamp(2rem,3vw,3.25rem)/1 'Playfair Display',Georgia,serif;margin:.35rem 0 .5rem}
+.endorsement-role{color:#ead4ac;text-transform:uppercase;letter-spacing:.08em;font-size:.78rem}
+.official-endorsement video{width:100%;height:100%;min-height:360px;background:#050505;object-fit:contain}
+.jill-endorsement{display:grid;grid-template-columns:1fr .8fr;gap:1.5rem;margin-top:1.25rem;background:#0d0d0d;border:1px solid #ffffff12;padding:1.25rem}
+.jill-copy{padding:1.5rem}
+.jill-copy blockquote{font:500 clamp(1.55rem,2.5vw,2.35rem)/1.25 'Playfair Display',Georgia,serif;color:#f0e6d4;margin:1.5rem 0}
+.jill-media{display:grid;grid-template-columns:1fr;gap:1rem;align-content:start}
+.jill-book{display:block;background:#111;padding:1rem;border:1px solid #c9a45f55;text-align:center}
+.jill-book img{display:block;width:100%;max-height:420px;object-fit:contain;background:#fff}
+.jill-profile-link{min-height:120px;border:1px solid #ffffff16;display:flex;align-items:center;gap:1rem;padding:1rem;color:#e7dcc8}
+.jill-profile-monogram{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--gold);font:500 1.4rem 'Playfair Display',Georgia,serif;color:#e8c57e;background:#14110d}
+.artist-endorsement-category{margin-top:5rem}
+
+/* Wood. Light. Living Tone — mounted reference sheets */
+.wood-tone{display:block}
+.wood-tone-copy{max-width:760px;margin-bottom:3rem}
+.wood-sheets{display:grid;grid-template-columns:1.15fr .85fr;gap:1.5rem}
+.wood-sheet{background:#11100f;border:1px solid #ffffff12;padding:1rem}
+.wood-sheet-head{padding:.75rem .75rem 1rem}
+.wood-sheet-head .eyebrow{margin-bottom:.4rem}
+.wood-sheet-head h3{font:500 clamp(1.8rem,2.6vw,2.8rem)/1.05 'Playfair Display',Georgia,serif;margin:0}
+.wood-sheet-image{position:relative;aspect-ratio:4/5;background:#050505}
+.wood-sheet-image img{object-fit:contain}
+.neck-wood-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.neck-wood-card{min-height:170px;padding:1.2rem;background:linear-gradient(145deg,#1b1712,#0c0c0c);border:1px solid #c9a45f33;display:flex;flex-direction:column;justify-content:flex-end}
+.neck-wood-card h4{font:500 1.35rem 'Playfair Display',Georgia,serif;margin:0 0 .5rem;color:#ead6aa}
+.neck-wood-card p{margin:0;color:var(--muted);font-size:.88rem;line-height:1.5}
+.wood-sheet-note{margin:1rem .2rem .2rem;color:#b8aa98;font-size:.88rem}
+
+/* Keep the build gallery focused on completed instruments, separate from wood reference sheets. */
+
+@media(max-width:800px){
+  .endorsement-category{margin-top:3rem}
+  .endorsement-category-head{align-items:center}
+  .official-endorsement,.jill-endorsement{grid-template-columns:1fr}
+  .official-endorsement-copy,.jill-copy{padding:1rem .5rem}
+  .official-endorsement video{min-height:0;aspect-ratio:16/9}
+  .jill-book img{max-height:360px}
+  .wood-sheets{grid-template-columns:1fr}
+  .wood-sheet-image{aspect-ratio:3/4}
+  .neck-wood-grid{grid-template-columns:1fr}
+  .neck-wood-card{min-height:140px}
+}
