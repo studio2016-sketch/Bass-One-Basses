@@ -48,6 +48,7 @@ export default function Home() {
   const [formStatus, setFormStatus] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [selectedModel, setSelectedModel] = useState("Custom consultation");
+  const [menuOpen, setMenuOpen] = useState(false);
   useEffect(() => { const model = new URLSearchParams(window.location.search).get("model"); if (model && ["Awesome One","Incredible One","Magnificent One","Custom consultation"].includes(model)) setSelectedModel(model); }, []);
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -82,7 +83,7 @@ export default function Home() {
   };
 
   return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} /><main>
-    <nav className="nav"><a className="brand" href="#top"><img className="brand-emblem" src="/bass-one-emblem.svg" alt="Bass One official gold emblem" /><span>BASS <i>ONE</i></span></a><div className="navlinks"><a href="/collection">Collection</a><a href="/listening-room">Listen</a><a href="#difference">The Difference</a><a href="#heritage">Heritage</a><a href="#custom">Custom</a></div><a className="navcta" href="#consult">Begin your build</a></nav>
+    <nav className="nav"><a className="brand" href="#top" onClick={() => setMenuOpen(false)}><img className="brand-emblem" src="/bass-one-emblem.svg" alt="Bass One official gold emblem" /><span>BASS <i>ONE</i></span></a><div className="navlinks"><a href="/collection">Collection</a><a href="/listening-room">Listen</a><a href="#difference">The Difference</a><a href="#heritage">Heritage</a><a href="#custom">Custom</a></div><a className="navcta" href="#consult">Begin your build</a><button className={"menu-toggle"+(menuOpen?" is-open":"")} type="button" aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen} aria-controls="mobile-menu" onClick={() => setMenuOpen(!menuOpen)}><span></span><span></span><span></span></button><div className={"mobile-menu"+(menuOpen?" is-open":"")} id="mobile-menu"><a href="/collection" onClick={() => setMenuOpen(false)}>Collection</a><a href="/listening-room" onClick={() => setMenuOpen(false)}>Listen</a><a href="#difference" onClick={() => setMenuOpen(false)}>The Difference</a><a href="#heritage" onClick={() => setMenuOpen(false)}>Heritage</a><a href="#custom" onClick={() => setMenuOpen(false)}>Custom</a><a className="mobile-menu-cta" href="#consult" onClick={() => setMenuOpen(false)}>Begin your build</a></div></nav>
     <section className="hero" id="top">
       <div className="hero-glow" />
       <div className="hero-copy"><p className="eyebrow">Ergonomically enhanced · Tonally dynamic</p><h1>Built to play<br/><em>with you.</em></h1><p className="lede">Instruments of uncommon balance, sensitivity, and beauty—created so the bass never stands between the musician and the music.</p><div className="actions"><a className="button solid" href="/collection">Explore the collection</a><a className="textlink" href="#difference">Why Bass One <span>→</span></a></div></div>
