@@ -416,3 +416,34 @@
   .jermaine-card{aspect-ratio:3/2;width:100%;max-width:100%}
   .jermaine-name-fix{font-size:clamp(6px,1.45vw,10px)}
 }
+
+
+/* Endorsement card harmony pass — preserve approved artwork, normalize presentation */
+.artist-endorsement-category .endorsement-cards{
+  align-items:stretch;
+  gap:1.5rem;
+}
+.artist-endorsement-category .endorsement-card{
+  aspect-ratio:3/2;
+  border:1px solid #c9a45f88;
+  background:#07111e;
+  box-shadow:0 18px 42px #0009, inset 0 0 0 1px #ffffff08;
+}
+.artist-endorsement-category .endorsement-card:not(.jermaine-card) img{
+  object-fit:contain!important;
+  object-position:center center!important;
+  padding:0!important;
+  background:#07111e!important;
+}
+.artist-endorsement-category .jermaine-card{
+  aspect-ratio:3/2;
+}
+@media(max-width:800px){
+  .artist-endorsement-category .endorsement-cards{
+    gap:1.35rem;
+  }
+  .artist-endorsement-category .endorsement-card{
+    width:100%;
+    aspect-ratio:3/2;
+  }
+}
