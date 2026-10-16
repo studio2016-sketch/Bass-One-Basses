@@ -10,7 +10,7 @@ const models = [
 ];
 
 const endorsementCards = [
-  { name: "Jermaine Williams", src: "/endorsement-jermaine-williams.png", alt: "Jermaine Williams Bass One endorsement card" },
+  { name: "Jermaine Williams", src: "/endorsement-jermaine-williams-locked.jpeg", alt: "Jermaine Williams Bass One endorsement card", special: true },
   { name: "Barry Jackson", src: "/endorsement-barry-jackson.png", alt: "Barry Jackson Bass One endorsement card" },
   { name: "Chris Anderson", src: "/endorsement-chris-anderson.png", alt: "Chris Anderson Bass One endorsement card" },
 ];
@@ -141,7 +141,7 @@ export default function Home() {
 
       <div className="endorsement-category artist-endorsement-category">
         <div className="endorsement-category-head"><p className="eyebrow">02</p><h3>Artist Endorsements</h3></div>
-        <div className="endorsement-cards">{endorsementCards.map(card => <figure className="endorsement-card" key={card.name}><Image src={card.src} alt={card.alt} fill sizes="(max-width: 800px) 100vw, 33vw" /></figure>)}</div>
+        <div className="endorsement-cards">{endorsementCards.map(card => card.special ? <figure className="endorsement-card jermaine-card" key={card.name} aria-label={card.alt}><img className="jermaine-base" src={card.src} alt={card.alt}/><div className="jermaine-middle-mask"/><img className="jermaine-slice jermaine-slice-copy" src={card.src} alt="" aria-hidden="true"/><img className="jermaine-slice jermaine-slice-photo" src={card.src} alt="" aria-hidden="true"/><span className="jermaine-name-fix">Joe L Barnes</span></figure> : <figure className="endorsement-card" key={card.name}><Image src={card.src} alt={card.alt} fill sizes="(max-width: 800px) 100vw, 33vw" /></figure>)}</div>
       </div>
     </section>
 
