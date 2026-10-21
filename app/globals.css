@@ -512,11 +512,15 @@
 }
 
 
-/* Bass One logo hero */
+/* Bass One full-bleed home hero */
 .brand-hero{
   min-height:0!important;
   height:auto!important;
   max-height:none!important;
+  width:100vw!important;
+  max-width:none!important;
+  margin:0!important;
+  margin-left:calc(50% - 50vw)!important;
   padding:80px 0 0!important;
   background:#030303!important;
   display:block!important;
@@ -524,22 +528,28 @@
 }
 .brand-hero-frame{
   position:relative;
-  width:100%;
-  aspect-ratio:3/1;
+  width:100vw;
+  max-width:none;
+  margin:0;
+  aspect-ratio:16/9;
   background:#030303;
+  overflow:hidden;
 }
 .brand-hero-image{
-  object-fit:contain!important;
+  object-fit:cover!important;
   object-position:center center!important;
   filter:none!important;
   mix-blend-mode:normal!important;
 }
 @media(max-width:800px){
   .brand-hero{
+    width:100vw!important;
+    margin-left:calc(50% - 50vw)!important;
     padding-top:65px!important;
   }
   .brand-hero-frame{
-    aspect-ratio:3/1;
+    width:100vw;
+    aspect-ratio:16/9;
   }
 }
 
