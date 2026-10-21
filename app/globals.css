@@ -447,3 +447,14 @@
     aspect-ratio:3/2;
   }
 }
+
+
+/* Human-player section without legacy image */
+.difference-text-only{
+  grid-template-columns:1fr;
+}
+.difference-text-only .difference-copy{
+  max-width:1180px;
+  width:100%;
+  margin:0 auto;
+}
