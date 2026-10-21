@@ -510,3 +510,35 @@
   .body-woods-sheet{aspect-ratio:1085/1450}
   .difference-image img{padding:.75rem}
 }
+
+
+/* Bass One logo hero */
+.brand-hero{
+  min-height:0!important;
+  height:auto!important;
+  max-height:none!important;
+  padding:80px 0 0!important;
+  background:#030303!important;
+  display:block!important;
+  overflow:hidden;
+}
+.brand-hero-frame{
+  position:relative;
+  width:100%;
+  aspect-ratio:3/1;
+  background:#030303;
+}
+.brand-hero-image{
+  object-fit:contain!important;
+  object-position:center center!important;
+  filter:none!important;
+  mix-blend-mode:normal!important;
+}
+@media(max-width:800px){
+  .brand-hero{
+    padding-top:65px!important;
+  }
+  .brand-hero-frame{
+    aspect-ratio:3/1;
+  }
+}

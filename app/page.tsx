@@ -78,11 +78,10 @@ export default function Home() {
 
   return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} /><main>
     <nav className="nav"><a className="brand" href="#top" onClick={() => setMenuOpen(false)}><img className="brand-logo-full" src="/bass-one-logo.webp" alt="Bass One Basses" /></a><div className="navlinks"><a href="/collection">Collection</a><a href="/listening-room">Listen</a><a href="#about">About</a><a href="#difference">The Difference</a><a href="#custom">Custom</a></div><a className="navcta" href="#consult">Begin your build</a><button className={"menu-toggle"+(menuOpen?" is-open":"")} type="button" aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen} aria-controls="mobile-menu" onClick={() => setMenuOpen(!menuOpen)}><span></span><span></span><span></span></button><div className={"mobile-menu"+(menuOpen?" is-open":"")} id="mobile-menu"><a href="/collection" onClick={() => setMenuOpen(false)}>Collection</a><a href="/listening-room" onClick={() => setMenuOpen(false)}>Listen</a><a href="#about" onClick={() => setMenuOpen(false)}>About</a><a href="#difference" onClick={() => setMenuOpen(false)}>The Difference</a><a href="#custom" onClick={() => setMenuOpen(false)}>Custom</a><a className="mobile-menu-cta" href="#consult" onClick={() => setMenuOpen(false)}>Begin your build</a></div></nav>
-    <section className="hero" id="top">
-      <div className="hero-glow" />
-      <div className="hero-copy"><p className="eyebrow">Ergonomically enhanced · Tonally dynamic</p><h1>Built to play<br/><em>with you.</em></h1><p className="lede">Instruments of uncommon balance, sensitivity, and beauty—created so the bass never stands between the musician and the music.</p><div className="actions"><a className="button solid" href="/collection">Explore the collection</a><a className="textlink" href="#difference">Why Bass One <span>→</span></a></div></div>
-      <div className="hero-image"><Image src="https://static.wixstatic.com/media/3e9782_91fb8dcd74cc4b9bb44b4ff7a9d04ebd~mv2.png" alt="Bass One custom bass" fill priority sizes="(max-width: 800px) 100vw, 52vw" /></div>
-      <p className="hero-note">Austin, Texas<br/>Handcrafted with purpose</p>
+    <section className="hero brand-hero" id="top">
+      <div className="brand-hero-frame">
+        <Image className="brand-hero-image" src="/bass-one-home-hero.png" alt="Bass One Basses" fill priority sizes="100vw" />
+      </div>
     </section>
 
     <section className="statement"><p>“Your instrument should be the means by which you express yourself, not the barrier between your ideas and what the audience hears.”</p></section>
