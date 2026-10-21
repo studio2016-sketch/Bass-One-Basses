@@ -458,3 +458,55 @@
   width:100%;
   margin:0 auto;
 }
+
+
+/* Mission-led About Us */
+.about{background:radial-gradient(circle at 15% 10%,#2b2417 0,transparent 34%),#0b0d0a}
+.about-kicker{display:grid;grid-template-columns:.65fr 1.35fr;gap:4rem;align-items:end;border-bottom:1px solid #c9a45f44;padding-bottom:2.4rem}
+.about-kicker .eyebrow{margin:0}
+.about-kicker h2{margin:0}
+.about-mission{display:grid;grid-template-columns:.8fr 1.2fr;gap:6vw;padding:4rem 0 3rem}
+.mission-lead{font:500 clamp(1.8rem,3.3vw,3.4rem)/1.16 'Playfair Display',Georgia,serif;color:#f2eadc;margin:0}
+.mission-lead strong{color:#d7bb83;font-weight:500}
+.mission-copy{columns:2;column-gap:2rem;color:#c8c1b5;line-height:1.72}
+.mission-copy p{break-inside:avoid;margin:0 0 1.4rem}
+.mission-close{border-top:1px solid #c9a45f44;padding-top:2rem;display:grid;grid-template-columns:1fr 1fr;gap:.55rem 2rem}
+.mission-close span{font:italic 500 clamp(1.4rem,2.4vw,2.4rem) 'Playfair Display',Georgia,serif;color:#ead7ae}
+.mission-close strong{font-size:1rem;letter-spacing:.16em;text-transform:uppercase;text-align:right;color:#f4eee5}
+.mission-close small{grid-column:1/-1;color:#9f988c;letter-spacing:.08em;text-transform:uppercase}
+
+/* Primary Bass One logo */
+.brand-logo-full{display:block;width:clamp(150px,15vw,215px);height:auto;object-fit:contain}
+.footer-brand-logo{width:min(260px,70vw)}
+.sales-page-logo{display:block;width:190px;height:auto;object-fit:contain}
+.nav .brand{min-width:150px}
+
+/* Expert names: intentionally high-contrast for identification and research */
+.official-endorsement-copy h4,.jill-copy h4{color:#fff!important}
+
+/* Updated luxury wood selection sheets */
+.wood-tone{display:block;padding:7rem 6vw;background:linear-gradient(145deg,#0a0a09,#14130f)}
+.wood-tone-copy{max-width:830px;margin-bottom:3rem}
+.wood-sheet-luxury{position:relative;width:100%;aspect-ratio:3/2;background:#050505;border:1px solid #c9a45f66;box-shadow:0 20px 55px #0009;overflow:hidden}
+.wood-sheet-luxury img{object-fit:contain!important;background:#050505}
+.body-woods-sheet{aspect-ratio:1085/1450;max-width:1050px;margin:0 auto 1.5rem}
+.wood-sheet-pair{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.wood-sheet-pair .wood-sheet-luxury{aspect-ratio:3/2}
+
+/* Human-player feature: preserve full blue-LED seven-string */
+.difference-image{background:#050505}
+.difference-image img{object-fit:contain!important;padding:2rem}
+
+@media(max-width:800px){
+  .about-kicker,.about-mission{grid-template-columns:1fr;gap:1.5rem}
+  .about-mission{padding:2.5rem 0}
+  .mission-copy{columns:1}
+  .mission-close{grid-template-columns:1fr}
+  .mission-close strong{text-align:left}
+  .brand-logo-full{width:145px}
+  .sales-page-logo{width:160px}
+  .wood-tone{padding:5rem 5vw}
+  .wood-sheet-pair{grid-template-columns:1fr}
+  .body-woods-sheet{aspect-ratio:1085/1450}
+  .difference-image img{padding:.75rem}
+}
