@@ -80,7 +80,7 @@ export default function Home() {
     <SiteMenu />
     <section className="hero brand-hero" id="top">
       <div className="brand-hero-frame">
-        <Image className="brand-hero-image" src="/bass-one-home-hero.png" alt="Bass One Basses" fill priority sizes="100vw" />
+        <Image className="brand-hero-image" src="/bass-one-home-hero.jpeg" alt="Bass One Basses" fill priority sizes="100vw" />
       </div>
     </section>
 
