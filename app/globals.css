@@ -567,3 +567,29 @@
   .sales-page>.site-menu,
   .boClient>.site-menu{position:relative}
 }
+
+
+/* Chris Anderson model correction */
+.chris-card{position:relative}
+.chris-model-correction{
+  position:absolute;
+  left:0;right:0;bottom:0;
+  z-index:5;
+  display:flex;
+  flex-direction:column;
+  gap:.2rem;
+  padding:.75rem 1rem .8rem;
+  background:linear-gradient(180deg,rgba(5,7,10,.12),rgba(5,7,10,.96) 28%);
+  border-top:1px solid #c9a45f88;
+  text-align:left;
+}
+.chris-model-correction strong{
+  color:#f3e5c9;
+  font:500 clamp(.88rem,1.15vw,1.08rem)/1.15 'Playfair Display',Georgia,serif;
+}
+.chris-model-correction span{
+  color:#d6bb83;
+  font:.62rem 'DM Mono',monospace;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
