@@ -80,7 +80,7 @@ export default function Home() {
     <SiteMenu />
     <section className="hero brand-hero" id="top">
       <div className="brand-hero-frame">
-        <Image className="brand-hero-image" src="/bass-one-home-hero.jpeg" alt="Bass One Basses" fill priority sizes="100vw" />
+        <Image className="brand-hero-image" src="/bass-one-home-hero-2026-10-26.jpeg" alt="Bass One Basses" fill priority sizes="100vw" />
       </div>
     </section>
 
@@ -151,6 +151,11 @@ export default function Home() {
         <div className="endorsement-category-head"><p className="eyebrow">02</p><h3>Artist Endorsements</h3></div>
         <div className="endorsement-cards">{endorsementCards.map(card => card.special ? <figure className="endorsement-card jermaine-card" key={card.name} aria-label={card.alt}><img className="jermaine-base" src={card.src} alt={card.alt}/><div className="jermaine-middle-mask"/><img className="jermaine-slice jermaine-slice-copy" src={card.src} alt="" aria-hidden="true"/><img className="jermaine-slice jermaine-slice-photo" src={card.src} alt="" aria-hidden="true"/><span className="jermaine-name-fix">Joe L Barnes</span></figure> : <figure className={"endorsement-card"+(card.name==="Chris Anderson"?" chris-card":"")} key={card.name}><Image src={card.src} alt={card.alt} fill sizes="(max-width: 800px) 100vw, 33vw" />{card.name==="Chris Anderson"&&<div className="chris-model-correction"><strong>{card.model}</strong><span>{card.modelNote}</span></div>}</figure>)}</div>
       </div>
+    </section>
+
+    <section className="finishes section" id="finishes">
+      <div className="section-intro"><h2>Available finishes.<br/><em>Color with character.</em></h2><p>Translucent, solid, metallic, and pearl finishes are available, with custom finishes available upon request.</p></div>
+      <div className="finish-chart"><Image src="/bass-one-finishes-chart-2026.jpeg" alt="Bass One Basses available finishes chart" fill sizes="100vw" /></div>
     </section>
 
     <section className="tone wood-tone" id="woods">
