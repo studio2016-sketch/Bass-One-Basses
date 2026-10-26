@@ -570,6 +570,27 @@
 
 
 /* Chris Anderson model correction */
+/* Correct the model name printed inside Chris Anderson's supplied artwork.
+   Keep the original photograph and the Cocobolo / 9 String line untouched. */
+.chris-card::before{
+  content:"MAGNIFICENT ONE - ULTIMATE";
+  position:absolute;
+  z-index:4;
+  left:9%;
+  top:55.5%;
+  width:49%;
+  height:5.2%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#080b10;
+  color:#e7cf9e;
+  font:600 clamp(9px,1.15vw,16px)/1.1 Georgia,serif;
+  letter-spacing:.08em;
+  white-space:nowrap;
+  pointer-events:none;
+}
+
 .chris-card{position:relative}
 .chris-model-correction{
   position:absolute;
