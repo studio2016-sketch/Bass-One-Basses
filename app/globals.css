@@ -593,3 +593,20 @@
   letter-spacing:.08em;
   text-transform:uppercase;
 }
+
+
+/* Bass One finishes chart */
+.finishes{background:#090909}
+.finish-chart{
+  position:relative;
+  width:100%;
+  aspect-ratio:1200/800;
+  background:#050505;
+  border:1px solid #c9a45f55;
+  box-shadow:0 18px 48px #0008;
+  overflow:hidden;
+}
+.finish-chart img{object-fit:contain!important;background:#050505}
+@media(max-width:800px){
+  .finish-chart{aspect-ratio:3/2}
+}
