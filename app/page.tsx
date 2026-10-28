@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { FormEvent, useEffect, useState } from "react";
 import SiteMenu from "./SiteMenu";
+import {readBookingAttribution} from "../lib/booking-attribution";
 
 const models = [
   { name: "Awesome One", series: "Professional Series", from: "$1,998", image: "/awesome-one.jpg", copy: "Versatility. Comfort. Performance. Professional performance with limitless possibilities." },
@@ -55,7 +56,7 @@ export default function Home() {
     setSubmitting(true);
     setFormStatus("");
     try {
-      const response = await fetch("/api/inquiry", {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name,email,interest,message,website:String(data.get("website")||"")})});
+      const response = await fetch("/api/inquiry", {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name,email,interest,message,attribution:{...readBookingAttribution(),inquiryPath:window.location.pathname},website:String(data.get("website")||"")})});
       if (!response.ok) throw new Error("Email service unavailable");
       setSent(true);
       setFormStatus("Thank you. Your inquiry has been sent to Bass One.");
@@ -70,7 +71,7 @@ export default function Home() {
     "@type": "Store",
     name: "Bass One Basses",
     description: "Ergonomically enhanced, tonally dynamic electric basses handcrafted by Dr. Duane Greene.",
-    url: "https://bass-one-basses.vercel.app",
+    url: "https://www.bassonebasses.com",
     email: "bassoneinfo@gmail.com",
     address: { "@type": "PostalAddress", addressLocality: "Austin", addressRegion: "TX", addressCountry: "US" },
     sameAs: [],

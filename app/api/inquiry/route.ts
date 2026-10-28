@@ -10,7 +10,7 @@ export async function POST(request: NextRequest) {
   try {
     const wgos=await fetch("https://wgos.app/api/public/inquiries",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({
       brandId:"bassOne",name,email,phone,title:"Bass One inquiry — "+interest,message,
-      details:{interest,source:"bass-one-basses-site"}
+      details:{interest,source:"bass-one-basses-site",attribution:input.attribution&&typeof input.attribution==="object"&&!Array.isArray(input.attribution)?input.attribution:{}}
     }),cache:"no-store"});
     if(!wgos.ok){
       const failure=await wgos.json().catch(()=>({}));
