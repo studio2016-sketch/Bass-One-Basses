@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import BookingAttribution from "./BookingAttribution";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bass-one-basses.vercel.app"),
-  title: "Bass One Basses | Built to Play With You",
+  metadataBase: new URL("https://www.bassonebasses.com"),
+  alternates: {canonical: "/"},
+  title: "Custom Bass Guitars by Dr. Duane Greene | Bass One Basses",
   description: "Ergonomically enhanced, tonally dynamic electric basses handcrafted by Dr. Duane Greene in Austin, Texas.",
   keywords: ["Bass One Basses", "custom bass guitar", "ergonomic bass", "six string bass", "custom electric bass", "Dr. Duane Greene"],
   openGraph: {
@@ -18,5 +20,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body>{children}</body></html>;
+  return <html lang="en"><body><BookingAttribution />{children}</body></html>;
 }
