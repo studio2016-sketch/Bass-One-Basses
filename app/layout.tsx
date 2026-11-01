@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./landscape-overrides.css";
 import BookingAttribution from "./BookingAttribution";
 
 export const metadata: Metadata = {
