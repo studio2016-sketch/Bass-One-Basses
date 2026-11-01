@@ -32,3 +32,62 @@
     object-position:center;
   }
 }
+
+
+/* Artist endorsements: landscape readability and non-overlapping artwork.
+   Wide layouts retain the three-card presentation; phone/tablet landscape
+   uses full-width artwork rather than three unreadably narrow columns. */
+@media (orientation: landscape) and (max-width: 1100px) {
+  .artist-endorsement-category .endorsement-cards {
+    grid-template-columns: 1fr !important;
+    width: min(100%, 760px);
+    margin-inline: auto;
+    gap: clamp(14px, 2vw, 24px);
+  }
+  .artist-endorsement-category .endorsement-card {
+    width: 100%;
+    min-width: 0;
+    aspect-ratio: 3 / 2;
+  }
+  .artist-endorsement-category .chris-card::before {
+    font-size: clamp(11px, 2vw, 18px);
+  }
+  .artist-endorsement-category .jermaine-name-fix {
+    font-size: clamp(8px, 1.45vw, 12px);
+  }
+}
+@media (orientation: landscape) and (min-width: 1101px) and (max-width: 1550px) {
+  .artist-endorsement-category .endorsement-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (orientation: landscape) {
+  .artist-endorsement-category .endorsement-card {
+    overflow: hidden;
+  }
+  .artist-endorsement-category .chris-model-correction {
+    position: relative;
+    inset: auto;
+    flex: none;
+    padding: clamp(10px, 1.2vw, 16px);
+    background: #0b0c10;
+    border-top: 1px solid #c9a45f88;
+  }
+  .artist-endorsement-category .chris-card {
+    aspect-ratio: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .artist-endorsement-category .chris-card > img {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 3 / 2;
+    flex: none;
+  }
+  .artist-endorsement-category .chris-card::before {
+    top: 37%;
+    height: 4%;
+  }
+}
